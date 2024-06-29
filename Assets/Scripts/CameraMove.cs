@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float _scrolls;
+    private Camera _camera;
+
+    private void Start()
     {
-        
+        _camera = Camera.main;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        var scroll = Input.mouseScrollDelta.y;
+        _camera.transform.position += -_camera.transform.up * scroll * _scrolls; 
     }
 }
