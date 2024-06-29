@@ -15,6 +15,6 @@ public class CameraMove : MonoBehaviour
     private void Update()
     {
         var scroll = Input.mouseScrollDelta.y;
-        _camera.transform.position += -_camera.transform.up * scroll * _scrolls; 
+        _camera.transform.position += _camera.transform.up * scroll * _scrolls; 
     }
 }
